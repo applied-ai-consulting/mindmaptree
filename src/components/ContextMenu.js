@@ -11,10 +11,10 @@ export default class extends React.Component {
       loading: [],
       contextMenuItems: [
         {
-          title: '导出',
+          title: 'Export As',
           command: '0',
           children: [
-            { title: '图片', command: '01' },
+            { title: 'Image', command: '01' },
             { title: 'PDF', command: '02' },
           ],
         },

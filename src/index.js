@@ -51,7 +51,7 @@ class MindNode extends Component {
     if (!sele.nodes()[0]) {
       return;
     }
-    const newJSON = { name: '新建节点', children: [] };
+    const newJSON = { name: 'New node', children: [] };
     const keyName = event.key;
     if (keyName === 'Tab') {
       // 添加子节点
@@ -84,23 +84,23 @@ class MindNode extends Component {
     const { hotkey_g } = this.state;
     hotkey_g
       .append('text')
-      .text('选中状态下：')
+      .text('Selected：')
       .attr('transform', 'translate(0, 20)');
     hotkey_g
       .append('text')
-      .text('Tab添加子节点')
+      .text('Tab add subsection')
       .attr('transform', 'translate(20, 40)');
     hotkey_g
       .append('text')
-      .text('Enter添加弟弟节点')
+      .text('Enter to add younger brother node')
       .attr('transform', 'translate(20, 60)');
     hotkey_g
       .append('text')
-      .text('Backspace/delete删除节点')
+      .text('Backspace/delete node')
       .attr('transform', 'translate(20, 80)');
     hotkey_g
       .append('text')
-      .text('单击编辑节点')
+      .text('Click to edit node')
       .attr('transform', 'translate(20, 100)');
   };
 

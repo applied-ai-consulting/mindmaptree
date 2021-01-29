@@ -1,44 +1,90 @@
 [
   {
-    "name":"如何学习D3",
-    "children":
-    [
+    "name": "Root",
+    "children": [
       {
-        "name":"预备知识",
-        "children":
-        [
-          {"name":"HTML & CSS", "children": []},
-          {"name":"JavaScript", "children": []},
-          {"name":"DOM", "children": []},
-          {"name":"SVG", "children": []},
-          {"name":"test", "children": []}]
+        "name": "Child1",
+        "children": [
+          {
+            "name": "HTML & CSS",
+            "children": []
+          },
+          {
+            "name": "JavaScript",
+            "children": []
+          },
+          {
+            "name": "DOM",
+            "children": []
+          },
+          {
+            "name": "SVG",
+            "children": []
+          },
+          {
+            "name": "test",
+            "children": []
+          }
+        ]
       },
       {
-        "name":"安装",
+        "name": "child2",
         "children": []
       },
       {
-        "name":"入门",
-        "children":
-        [
-          {"name":"选择集", "children": []},
-          {"name":"test", "children": []},
-          {"name":"绑定数据", "children": []},
-          {"name":"添加删除元素", "children": []},
+        "name": "child3",
+        "children": [
           {
-            "name":"简单图形",
-            "children":
-            [
-              {"name":"柱形图", "children": []},
-              {"name":"折线图", "children": []},
-              {"name":"散点图", "children": []}]
+            "name": "child3-1",
+            "children": []
           },
-          {"name":"比例尺", "children": []},
-          {"name":"生成器", "children": []},
-          {"name":"过渡", "children": []}]
+          {
+            "name": "child3-2",
+            "children": []
+          },
+          {
+            "name": "child3-3",
+            "children": []
+          },
+          {
+            "name": "child3-4",
+            "children": []
+          },
+          {
+            "name": "child3-5",
+            "children": [
+              {
+                "name": "child3-5-1",
+                "children": []
+              },
+              {
+                "name": "child3-5-2",
+                "children": []
+              },
+              {
+                "name": "child3-5-3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "child3-6",
+            "children": []
+          },
+          {
+            "name": "child3-7",
+            "children": []
+          },
+          {
+            "name": "child3-8",
+            "children": []
+          }
+        ]
       },
       {
-        "name":"进阶", "children": []
-      }]
+        "name": "child4",
+        "children": []
+      }
+    ]
   }
 ]
