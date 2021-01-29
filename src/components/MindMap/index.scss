@@ -22,7 +22,7 @@ div#mindmap {
   svg {
     flex: auto;
     outline: none;
-    background-color: rgb(238, 238, 243);
+    background-color: rgb(255, 255, 255);
 
     foreignObject {
       cursor: default;
@@ -58,7 +58,7 @@ div#mindmap {
         display: table !important;
         font-style: italic;
         z-index: 100 !important;
-        background-color: white !important;
+        background-color: #bebebe !important;
         border-radius: 5px;
         font-size: 13px;
       }
