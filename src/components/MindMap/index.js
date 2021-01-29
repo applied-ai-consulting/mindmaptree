@@ -560,39 +560,14 @@ class MindMap extends Component {
       const exportName = this.props.title ? `${this.props.title}` : 'export';
       await this.reposition();
       setTimeout(() => {
-        const node = document.getElementById('mindmap');
-        domtoimage.toPng(node).then((dataUrl) => {
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          context.canvas.width = node.offsetWidth;
-          context.canvas.height = node.offsetHeight;
-          context.fillStyle = 'white';
-          context.fillRect(0, 0, canvas.width, canvas.height);
-
-          // load image from data url
-          const imageObj = new Image();
-          imageObj.onload = () => {
-            context.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
-            const watermark = this.props.exportWatermark;
-            if (watermark) {
-              const img = new Image();
-              img.onload = function () {
-                context.translate(canvas.width / 2, canvas.height / 2);
-                context.rotate(watermark.rotate);
-                context.drawImage(img, -this.width / 2, -this.height / 2);
-                context.rotate(-watermark.rotate);
-                context.translate(-canvas.width / 2, -canvas.height / 2);
-
-                const link = document.createElement('a');
-                link.download = `${exportName}.jpg`;
-                link.href = canvas.toDataURL();
-                link.click();
-              };
-              img.src = watermark.imgSrc;
-            }
-          };
-          imageObj.src = dataUrl;
-        });
+        domtoimage
+          .toJpeg(document.getElementById('mindmap'))
+          .then(function (dataUrl) {
+            const link = document.createElement('a');
+            link.download = `${exportName}.jpg`;
+            link.href = dataUrl;
+            link.click();
+          });
       }, 400);
     } else if (item.command === '02') {
       // 导出PDF
@@ -645,7 +620,7 @@ class MindMap extends Component {
     if (this.props.depthLimit) {
       depthInRange = this.props.depthLimit && d.depth < this.props.depthLimit;
     }
-    const peersInRange = d.data.children.length < 10;
+    const peersInRange = d.children.length < 10; // removed d.data.children.length
     if (depthInRange && peersInRange) {
       if (n[i].className.baseVal.includes('gButton')) {
         d3.select(n[i]).style('opacity', 1);
