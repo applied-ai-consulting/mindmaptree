@@ -23,11 +23,11 @@ class MindMap extends Component {
       showNodeContextMenu: false,
       contextMenuX: 0,
       contextMenuY: 0,
-      nodeContextMenuItems: [{ title: '删除节点', command: 0 }],
+      nodeContextMenuItems: [{ title: 'Delete Node', command: 0 }],
       mindmap_svg: {},
       mindmap_g: {},
       dummy: {},
-      mindmapSvgZoom: () => {},
+      mindmapSvgZoom: () => { },
       easePolyInOut: d3.transition().duration(1000).ease(d3.easePolyInOut),
       link: d3
         .linkHorizontal()
@@ -342,11 +342,11 @@ class MindMap extends Component {
   };
 
   // 右键拖拽
-  rightDragStart() {}
+  rightDragStart() { }
 
-  rightDrag() {}
+  rightDrag() { }
 
-  rightDragEnd() {}
+  rightDragEnd() { }
 
   // 键盘
   svgKeyDown() {
@@ -358,7 +358,7 @@ class MindMap extends Component {
     const seleData = sele.data()[0];
     const seleRawData = sele.data()[0].data;
     const pNode = sele.node().parentNode;
-    const newJSON = { name: '新建节点', children: [] };
+    const newJSON = { name: 'New Node', children: [] };
     const keyName = d3.event.key;
 
     if (keyName === 'Tab') {
@@ -531,7 +531,7 @@ class MindMap extends Component {
     // 添加子节点
     if (n[i].style.opacity === '1') {
       const newJSON = {
-        name: '新建节点',
+        name: 'New Node',
         children: [],
       };
 
@@ -874,9 +874,8 @@ class MindMap extends Component {
   };
 
   gBtnTransform = (d) => {
-    return `translate(${d.data.size[1] + 8 - this.props.xSpacing},${
-      d.data.size[0] / 2 - 12
-    })`;
+    return `translate(${d.data.size[1] + 8 - this.props.xSpacing},${d.data.size[0] / 2 - 12
+      })`;
   };
 
   pathId = (d) => {
@@ -895,8 +894,8 @@ class MindMap extends Component {
     return `${this.state.link({
       source: [
         (d.parent ? d.parent.y + d.parent.data.size[1] : 0) -
-          d.y -
-          this.props.xSpacing, // 横坐标
+        d.y -
+        this.props.xSpacing, // 横坐标
         (d.parent ? d.parent.x + d.parent.data.size[0] / 2 : 0) - d.x, // 纵坐标
       ],
       target: [0, d.data.size[0] / 2],
@@ -1225,63 +1224,6 @@ class MindMap extends Component {
             ))}
           </div>
         )}
-
-        {/* <div className="button right-bottom">
-          {this.props.gps && (
-            <button
-              className="icon"
-              ref={this.gpsRef}
-              type="button"
-              onClick={this.makeCenter}
-            >
-              <i className="gps" />
-            </button>
-          )}
-          {this.props.fitView && (
-            <button
-              className="icon"
-              ref={this.fitViewRef}
-              type="button"
-              onClick={this.fitContent}
-            >
-              <i className="fitView" />
-            </button>
-          )}
-          {this.props.download && (
-            <button
-              className="icon"
-              ref={this.downloadRef}
-              type="button"
-              onClick={this.exportImage}
-            >
-              <i className="download" />
-            </button>
-          )}
-        </div> */}
-        {/* <div className="button top-right">
-          {this.props.showUndo && (
-            <button
-              className="icon"
-              ref={this.undoRef}
-              type="button"
-              disabled={!this.canUndo()}
-              onClick={this.canUndo() ? this.undo : null}
-            >
-              <i className="undo" />
-            </button>
-          )}
-          {this.props.showUndo && (
-            <button
-              className="icon"
-              ref={this.redoRef}
-              type="button"
-              disabled={!this.canRedo()}
-              onClick={this.canRedo() ? this.redo : null}
-            >
-              <i className="redo" />
-            </button>
-          )}
-        </div> */}
       </div>
     );
   }
@@ -1309,7 +1251,7 @@ MindMap.propTypes = {
 MindMap.defaultProps = {
   xSpacing: 80,
   ySpacing: 20,
-  strokeWidth: 4,
+  strokeWidth: 9,
   draggable: true,
   gps: true,
   fitView: false,
