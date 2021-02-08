@@ -1226,7 +1226,7 @@ MindMap.propTypes = {
 MindMap.defaultProps = {
   xSpacing: 80,
   ySpacing: 20,
-  strokeWidth: 9,
+  strokeWidth: 3,
   draggable: true,
   gps: true,
   fitView: false,
