@@ -2,7 +2,7 @@ $seleColor: rgba($color: blue, $alpha: 0.15);
 $strokeWidths: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 div#mindmap {
-  font-size: 14px;
+  font-size: 15px;
   position: relative;
   display: flex;
 
@@ -22,7 +22,7 @@ div#mindmap {
   svg {
     flex: auto;
     outline: none;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(238, 238, 243);
 
     foreignObject {
       cursor: default;
@@ -54,13 +54,16 @@ div#mindmap {
       border-radius: 5px;
 
       div {
-        color: black;
+        color: #514d4d;
         display: table !important;
         font-style: italic;
         z-index: 100 !important;
-        background-color: #bebebe !important;
+        background-color: #fffbfb !important;
         border-radius: 5px;
-        font-size: 13px;
+        font-size: 15px;
+        font-weight: 400 !important;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        line-height: 1.75em;
       }
     } 
 
