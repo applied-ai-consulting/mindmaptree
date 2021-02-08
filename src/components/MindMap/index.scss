@@ -40,7 +40,11 @@ div#mindmap {
         border: 1px solid transparent;
         width: max-content;
         white-space:pre-wrap;
-        color: black;
+        color: #514d4d;
+        font-size: 15px;
+        font-weight: 400 !important;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        line-height: 2em;
 
         &:focus {
           border-color: rgb(154, 154, 154);
